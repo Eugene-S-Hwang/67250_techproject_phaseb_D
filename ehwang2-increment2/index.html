@@ -4,17 +4,18 @@
         <meta name="author" content="Your name">
         <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
         <meta name="description" content="MonoMuse website redesign project">
-        <title>Document</title>
+        <title>MonoMuse</title>
+        <link rel="stylesheet" href="./static/style.css">
     </head>
     <body>
         <header>
-            <h1>MonoMuse</h1>
+            <img src="./static/monomuselogo.png" height="200"/>
             <nav>
-                <a href="../index.html">Home</a>
-                <a href="explore.html">Explore</a>
-                <a href="exhibitions.html">Exhibitions</a>
-                <a href="tickets.html">Buy Tickets</a>
-                <a href="checkout.html">Checkout</a>
+                <a id="navselected" href="index.html">Home</a>
+                <a href="views/explore.html">Explore</a>
+                <a href="views/exhibitions.html">Exhibitions</a>
+                <a href="views/tickets.html">Buy Tickets</a>
+                <a href="views/checkout.html">Checkout</a>
             </nav>
         </header>
         <div class="main">
@@ -27,7 +28,7 @@
                 offer new perspectives on the role of technology in culture and everyday life. 
                 Plan your visit to experience cutting-edge exhibitions, hands-on experiences, and 
                 events designed to inspire curiosity and creativity.</p>
-            <button>Buy Tickets</button>
+            <button id="homeButton">Buy Tickets</button>
         </div>
     
         <footer>
