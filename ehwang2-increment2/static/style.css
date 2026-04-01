@@ -1,8 +1,8 @@
 * {
     padding: 5px;
     margin: 5px;
-    background: #0b0b0c;
-    color:  #f5f5f7;
+    background: linear-gradient(to bottom, #FFFFF0, #FFFDD0, #F7E7CE, #F5DEB3, #DAA96A);
+    color:  #000000;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
@@ -10,31 +10,52 @@
 }
 
 #logo {
-    width: 18%;
     display: block;
+    border-radius: 10px;
+}
+
+#logo:hover {
+    background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+    z-index: 100;
+}
+
+header {
+    display: grid;
+    justify-content: center;
+}
+
+nav{
+    height:auto;
+    display: flex;
+    justify-content: center;
 }
 
 nav a {
+    display:grid;
+    place-items: center;
     text-decoration: none;
-    color: #f5f5f7;
+    height:50px;
     font-weight: 400;
     padding: 8px 10px;
-    border: 1px solid transparent;
-    border-radius: 12px;
+    border: 10px solid transparent;
+    border-radius: 50px;
 }
 
 nav a:hover {
     border-color: #4d5c3b;
+    cursor: pointer;
 }
 
 #navselected {
-    color:#92ad70;    
+    color:#4d5c3b;
+    zoom:3;
 }
 
 #homeButton {
     background: red;
     color: black;
     border-radius: 15px;
+    cursor:pointer
 }
 
 footer {
