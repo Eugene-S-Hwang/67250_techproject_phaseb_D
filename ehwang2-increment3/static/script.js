@@ -69,3 +69,28 @@ function addYear(){
     var year = new Date().getFullYear();
     document.getElementById("copyYear").innerHTML = String(year) + " Monomuse. All rights reserved."
 }
+
+function randomInt(length){
+    return Math.floor(Math.random() * length);
+}
+
+function randomMessage(){
+    var messages = ["The first digital artwork ever sold at auction dates back to the 1960s—long before personal computers were common.",
+    "Some modern AI-generated artworks are trained on millions of images, meaning a single piece can contain influences from centuries of art history.", 
+    "The average museum visitor spends less than 30 seconds looking at a single artwork—interactive exhibits can increase that time dramatically.",
+    "Early computer artists had to write code by hand to “draw” images—every line and shape was mathematically defined.",
+    "Virtual reality art installations can track your movement in real time, making every visitor’s experience slightly different.",
+    "The term “glitch art” comes from unexpected digital errors—what was once a bug is now an artistic style.",
+    "Some museums now preserve not just digital art, but also the software and hardware needed to run it.",
+    "Interactive exhibits can collect anonymous engagement data, helping curators design more immersive future experiences.",
+    "Generative art means no two versions of the same artwork are ever exactly identical—even the artist may not know the final outcome.",
+    "Sound, motion, and touch are increasingly part of modern exhibitions—expanding art beyond just what we see."]
+
+    var length = messages.length;
+
+    var msg = messages[randomInt(length)];
+
+    document.getElementById("randomMessage").innerHTML = msg;
+}
+
+randomMessage();
