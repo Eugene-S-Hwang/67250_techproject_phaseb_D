@@ -380,6 +380,13 @@ form * {
     text-align: center;
 }
 
+#purchase-submit-button, #donate-submit, #checkout-submit{
+    background: #1F2A33;
+    color: #F4F1ED;
+    border-radius: 8px;
+    cursor:pointer
+}
+
 #purchase-date-button {
     background: #1F2A33;
     color: #F4F1ED;
