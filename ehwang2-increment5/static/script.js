@@ -97,10 +97,8 @@ function greeting(hr){
 
 function activeNav(){
     const navLinks = document.querySelectorAll('nav a');
-    console.log(window.location.href);
     navLinks.forEach(link => {
         if (window.location.href === link.href) {
-            console.log(link.href);
             link.classList.add("active");
         }
     });
@@ -136,6 +134,18 @@ randomMessage();
 greeting(hour);
 activeNav();
 
+//MAP:
+
+if(document.getElementById("map")){
+    var map = L.map('map').setView([40.7236, -73.9967], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var marker = L.marker([40.7236, -73.9967]).addTo(map);
+    marker.bindPopup("<b>MonoMuse</b><br>275 Lafayette Street, New York, NY 10012").openPopup();
+}
+
 //JQUERY:
 
 $("#readLess").click(function(){ 
@@ -154,19 +164,28 @@ $("#homeButton").click(function(){
     window.location.href = "views/tickets.html";
 });
 
+$("#nav-button").click(function(){
+    $(".nav_bar").toggle();
+});
+
+$(window).on("resize", function () {
+    if (window.innerWidth > 768) {
+        $(".nav_bar").css("display", "");
+    }
+});
+
 $("#left-arrow").click(function(){
     exhibitionIndex--;
-    nextExhibition(exhibitionIndex - 1);
+    nextExhibition(exhibitionIndex);
 });
 
 $("#right-arrow").click(function(){
     exhibitionIndex++;
-    nextExhibition(exhibitionIndex + 1);
+    nextExhibition(exhibitionIndex);
 });
 
 $("#purchase-date-button").click(function(){
     var date = $("#purchase-date").val();
-    console.log(date);
     if(date){
         $(".ticket-purchase-form").show();
         $("#Decrease-Adult-tickets").prop("disabled", false);
@@ -224,14 +243,50 @@ bindTicketStepper("Increase-Member-tickets", "Decrease-Member-tickets", "member"
 bindTicketStepper("Increase-Student-tickets", "Decrease-Student-tickets", "student");
 
 $(".ticket-purchase-form").on("submit", function (e) {
+    if (this.id === "checkout-form") {
+        e.preventDefault();
+
+        alert("Checkout form submitted");
+        window.location.href = "tickets.html";
+        return;
+    }
     e.preventDefault();
     var dateVal = $("#purchase-date").val();
-    var lines = [
-        "Name: " + $("#purchase-name").val(),
-        "Email: " + $("#purchase-email").val(),
-        "Total tickets: " + $("#purchase-total-tickets").val(),
-        "Price: " + $("#purchase-price").val(),
-        "Date: " + (dateVal || "(none selected)")
-    ];
-    alert(lines.join("\n"));
+    sessionStorage.setItem(
+        "monoMuseCheckout",
+        JSON.stringify({
+            date: dateVal || "",
+            name: $("#purchase-name").val() || "",
+            email: $("#purchase-email").val() || "",
+            totalTickets: $("#purchase-total-tickets").val() || "0",
+            price: $("#purchase-price").val() || "$0",
+            adult: ticketCounts.adult,
+            member: ticketCounts.member,
+            student: ticketCounts.student
+        })
+    );
+    window.location.href = "checkout.html";
 });
+
+function populateCheckout() {
+    var form = document.getElementById("checkout-form");
+    if (!form) {
+        return;
+    }
+    var raw = sessionStorage.getItem("monoMuseCheckout");
+    if (!raw) {
+        window.location.href = "tickets.html";
+        return;
+    }
+    var d = JSON.parse(raw);
+    $("#checkout-date").val(d.date || "");
+    $("#checkout-name").val(d.name || "");
+    $("#checkout-email").val(d.email || "");
+    $("#checkout-adult").val(String(d.adult != null ? d.adult : 0));
+    $("#checkout-member").val(String(d.member != null ? d.member : 0));
+    $("#checkout-student").val(String(d.student != null ? d.student : 0));
+    $("#checkout-total-tickets").val(d.totalTickets || "0");
+    $("#checkout-price").val(d.price || "$0");
+}
+
+populateCheckout();

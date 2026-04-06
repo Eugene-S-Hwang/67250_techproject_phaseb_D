@@ -8,20 +8,28 @@
         <link rel="stylesheet" href="../static/style.css">
         <script src="../static/script.js" defer></script>
         <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body onload="addYear()">
         <div class="container">
             <header class="header">
                 <img class="logo" src="../static/monomuselogo.png"/>
-                <nav class="nav_bar">
-                    <a href="../index.html">Home</a>
-                    <a href="explore.html">Explore</a>
-                    <a href="exhibitions.html">Exhibitions</a>
-                    <a id="ticketsButton" href="tickets.html">Buy Tickets</a>
-                </nav>
+                <div class="nav-div">
+                    <button id="nav-button">
+                        <img src="../static/hamburger_menu.png" alt="Menu"/>
+                    </button>
+                    <nav class="nav_bar">
+                        <a href="../index.html">Home</a>
+                        <a href="explore.html">Explore</a>
+                        <a href="exhibitions.html">Exhibitions</a>
+                        <a id="ticketsButton" href="tickets.html">Buy Tickets</a>
+                    </nav>
+                </div>
             </header>
-            <h1>Explore</h1>
-            <img class="main-img" src="../static/MonomuseEntrance.png" height="200"/>
+            <h1 class="main-title">Explore</h1>
+            <div class="main-img">
+                <img class="main-img-img" src="../static/MonomuseEntrance.png"/>
+            </div>
             <div class="main">
                 <p id="randomMessage"></p>
     

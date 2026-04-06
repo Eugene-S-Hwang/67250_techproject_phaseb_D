@@ -8,25 +8,33 @@
         <link rel="stylesheet" href="../static/style.css">
         <script src="../static/script.js" defer></script>
         <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body onload="addYear()">
         <div class="container">
             <header class="header">
                 <img class="logo" src="../static/monomuselogo.png"/>
-                <nav class="nav_bar">
-                    <a href="../index.html">Home</a>
-                    <a href="explore.html">Explore</a>
-                    <a href="exhibitions.html">Exhibitions</a>
-                    <a id="ticketsButton" href="tickets.html">Buy Tickets</a>
-                </nav>
+                <div class="nav-div">
+                    <button id="nav-button">
+                        <img src="../static/hamburger_menu.png" alt="Menu"/>
+                    </button>
+                    <nav class="nav_bar">
+                        <a href="../index.html">Home</a>
+                        <a href="explore.html">Explore</a>
+                        <a href="exhibitions.html">Exhibitions</a>
+                        <a id="ticketsButton" href="tickets.html">Buy Tickets</a>
+                    </nav>
+                </div>
             </header>
-            <h1>Exhibitions</h1>
+            <h1 class="main-title">Exhibitions</h1>
             <div class="main-img">
-                <button id="left-arrow">←</button>
                 <img class="main-img-img" id="exhibition-image" src="../static/Ellis_Island.jpg"/>
             </div>
             <div class="main">
-                <button id="right-arrow">→</button>
+                <div class="arrow-buttons">
+                    <button type="button" id="left-arrow">&lsaquo;</button>
+                    <button type="button" id="right-arrow">&rsaquo;</button>
+                </div>
                 <h3 id="exhibition-title">Exhibition 1: Streets of Arrival: Immigration and the Making of New York</h3>
                 <p id="exhibition-description">Step into the lives of newcomers who transformed New York City into a global 
                     crossroads. Through personal artifacts, recreated tenement rooms, and interactive 
