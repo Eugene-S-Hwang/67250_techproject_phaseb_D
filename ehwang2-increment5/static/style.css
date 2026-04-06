@@ -307,11 +307,6 @@ nav a {
     border-radius: 8px;
 }
 
-nav a:hover {
-    border-color: #4d5c3b;
-    cursor: pointer;
-}
-
 .active {
     background: #F4F1ED;
 }
