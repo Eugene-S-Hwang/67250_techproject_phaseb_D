@@ -7,36 +7,39 @@
         <title>MonoMuse</title>
         <link rel="stylesheet" href="../static/style.css">
         <script src="../static/script.js" defer></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
     </head>
     <body onload="addYear()">
-        <header>
-            <img src="../static/monomuselogo.png" height="200"/>
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="explore.html">Explore</a>
-                <a id="navselected" href="exhibitions.html">Exhibitions</a>
-                <a href="tickets.html">Buy Tickets</a>
-                <a href="checkout.html">Checkout</a>
-            </nav>
-        </header>
-        <div class="main">
-            <h3>Exhibition 1: Neural Canvas</h3>
-            <p>An immersive exhibition where AI interprets visitors' brainwave data 
-                into evolving digital paintings in real time. Using wearable sensors, 
-                each participant generates unique visuals that shift with their thoughts 
-                and emotions, creating a deeply personal and ever-changing artwork.</p>
-            
-            <h3>Exhibition 2: </h3>
-            <p>A multi-room installation exploring how algorithms shape music, visuals, 
-                and online culture through generative art and interactive soundscapes. 
-                Visitors move through spaces where their actions influence algorithmic 
-                outputs, revealing the hidden systems that curate and construct digital 
-                experiences.</p>
+        <div class="container">
+            <header class="header">
+                <img class="logo" src="../static/monomuselogo.png"/>
+                <nav class="nav_bar">
+                    <a href="../index.html">Home</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="exhibitions.html">Exhibitions</a>
+                    <a id="ticketsButton" href="tickets.html">Buy Tickets</a>
+                </nav>
+            </header>
+            <h1>Exhibitions</h1>
+            <div class="main-img">
+                <button id="left-arrow">←</button>
+                <img class="main-img-img" id="exhibition-image" src="../static/Ellis_Island.jpg"/>
+            </div>
+            <div class="main">
+                <button id="right-arrow">→</button>
+                <h3 id="exhibition-title">Exhibition 1: Streets of Arrival: Immigration and the Making of New York</h3>
+                <p id="exhibition-description">Step into the lives of newcomers who transformed New York City into a global 
+                    crossroads. Through personal artifacts, recreated tenement rooms, and interactive 
+                    maps tracing journeys from Ellis Island, this exhibition explores how waves of 
+                    immigrants reshaped neighborhoods, culture, and identity. Visitors can listen 
+                    to oral histories, examine evolving city demographics, and reflect on the 
+                    ongoing story of migration in the city.</p>
+            </div>
+        
+            <footer class="footer">
+                &copy;
+                <p id="copyYear"></p>
+            </footer>
         </div>
-    
-        <footer>
-            &copy;
-            <p id="copyYear"></p>
-        </footer>
     </body>
 </html>

@@ -7,70 +7,132 @@
         <title>MonoMuse</title>
         <link rel="stylesheet" href="../static/style.css">
         <script src="../static/script.js" defer></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
     </head>
     <body onload="addYear()">
-        <header>
-            <img src="../static/monomuselogo.png" height="200"/>
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="explore.html">Explore</a>
-                <a href="exhibitions.html">Exhibitions</a>
-                <a id="navselected" href="tickets.html">Buy Tickets</a>
-                <a href="checkout.html">Checkout</a>
-            </nav>
-        </header>
-        <div class="main">
-            <table>
-                <thead>
-                    <th>
-                        Ticket Type
-                    </th>
-                    <th>
-                        Description
-                    </th>
-                    <th>
-                        Price ($)
-                    </th>
-                </thead>
-                <tr>
-                    <td>
-                        Adult
-                    </td>
-                    <td>
-                        General admission for ages 18 and over. Under 18 free of charge.
-                    </td>
-                    <td>
-                        $18
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Student
-                    </td>
-                    <td>
-                        Student ID required
-                    </td>
-                    <td>
-                        $10
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Member
-                    </td>
-                    <td>
-                        Member ID required
-                    </td>
-                    <td>
-                        $15
-                    </td>
-                </tr>
-            </table>
+        <div class="container">
+            <header class="header">
+                <img class="logo" src="../static/monomuselogo.png"/>
+                <nav class="nav_bar">
+                    <a href="../index.html">Home</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="exhibitions.html">Exhibitions</a>
+                    <a id="ticketsButton" href="tickets.html">Buy Tickets</a>
+                </nav>
+            </header>
+            <h1>Buy Tickets</h1>
+            <div class="ticket-table">
+                <div class="ticket-date-picker">
+                    <label for="purchase-date">Please Select A Date:</label>
+                    <input type="date" id="purchase-date" name="date">
+                    <button type="button" id="purchase-date-button">Buy Now</button>
+                </div>
+
+                <table class="tickets-picker">
+                    <thead>
+                        <tr>
+                            <th class="tickets-picker__type-cell" scope="col">Ticket Type</th>
+                            <th class="tickets-picker__count-cell" scope="col">Number of Tickets</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="tickets-picker__title-row">
+                        <td class="tickets-picker__type-cell">Adult</td>
+                        <td class="tickets-picker__count-cell">0 tickets selected</td>
+                    </tr>
+                    <tr class="tickets-picker__detail-row">
+                        <td colspan="2" class="tickets-picker__detail-cell">
+                            <i>Price: $18</i>
+                            <p>General admission for ages 18 and over. Under 18 free of charge.</p>
+                        </td>
+                    </tr>
+                    <tr class="tickets-picker__controls-row">
+                        <td colspan="2" class="tickets-picker__controls-cell">
+                            <span class="tickets-picker__buttons">
+                                <button type="button" id="Decrease-Adult-tickets" disabled>-</button>
+                                <button type="button" id="Increase-Adult-tickets" disabled>+</button>
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr class="tickets-picker__section-rule">
+                        <td colspan="2"></td>
+                    </tr>
+
+                    <tr class="tickets-picker__title-row">
+                        <td class="tickets-picker__type-cell">Member</td>
+                        <td class="tickets-picker__count-cell">0 tickets selected</td>
+                    </tr>
+                    <tr class="tickets-picker__detail-row">
+                        <td colspan="2" class="tickets-picker__detail-cell">
+                            <i>Price: $15</i>
+                            <p>Member ID required</p>
+                        </td>
+                    </tr>
+                    <tr class="tickets-picker__controls-row">
+                        <td colspan="2" class="tickets-picker__controls-cell">
+                            <span class="tickets-picker__buttons">
+                                <button type="button" id="Decrease-Member-tickets" disabled>-</button>
+                                <button type="button" id="Increase-Member-tickets" disabled>+</button>
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr class="tickets-picker__section-rule">
+                        <td colspan="2"></td>
+                    </tr>
+
+                    <tr class="tickets-picker__title-row">
+                        <td class="tickets-picker__type-cell">Students</td>
+                        <td class="tickets-picker__count-cell">0 tickets selected</td>
+                    </tr>
+                    <tr class="tickets-picker__detail-row">
+                        <td colspan="2" class="tickets-picker__detail-cell">
+                            <i>Price: $10</i>
+                            <p>Student ID required</p>
+                        </td>
+                    </tr>
+                    <tr class="tickets-picker__controls-row">
+                        <td colspan="2" class="tickets-picker__controls-cell">
+                            <span class="tickets-picker__buttons">
+                                <button type="button" id="Decrease-Student-tickets" disabled>-</button>
+                                <button type="button" id="Increase-Student-tickets" disabled>+</button>
+                            </span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="main">
+                <form class="ticket-purchase-form">
+                    <h2 class="ticket-purchase-form__title">Ticket Purchase</h2>
+                    <div class="ticket-purchase-form__field">
+                        <label for="purchase-name">Name</label>
+                        <input id="purchase-name" name="name" type="text" required />
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="purchase-email">Email</label>
+                        <input id="purchase-email" name="email" type="email" required />
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="purchase-total-tickets">Total Tickets</label>
+                        <input id="purchase-total-tickets" name="totalTickets" type="text" value="0" readonly />
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="purchase-price">Price</label>
+                        <input id="purchase-price" name="price" type="text" value="$0" readonly />
+                    </div>
+                    <div class="ticket-purchase-form__submit">
+                        <button type="submit" id="purchase-submit-button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        
+            <footer class="footer">
+                &copy;
+                <p id="copyYear"></p>
+            </footer>
         </div>
-    
-        <footer>
-            &copy;
-            <p id="copyYear"></p>
-        </footer>
     </body>
 </html>

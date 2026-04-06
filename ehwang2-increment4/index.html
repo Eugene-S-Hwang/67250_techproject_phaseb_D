@@ -7,34 +7,57 @@
         <title>MonoMuse</title>
         <link rel="stylesheet" href="./static/style.css">
         <script src="./static/script.js" defer></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
     </head>
     <body onload="addYear()">
-        <header>
-            <img src="./static/monomuselogo.png" height="200"/>
-            <nav>
-                <a id="navselected" href="index.html">Home</a>
-                <a href="views/explore.html">Explore</a>
-                <a href="views/exhibitions.html">Exhibitions</a>
-                <a href="views/tickets.html">Buy Tickets</a>
-                <a href="views/checkout.html">Checkout</a>
-            </nav>
-        </header>
-        <div class="main">
-            <h2 id="greeting">Welcome to MonoMuse</h2>
-            <p>MonoMuse is a contemporary museum dedicated to exploring the intersection of art, 
-                technology, and human creativity. Through immersive exhibitions, interactive 
-                installations, and rotating collections, MonoMuse invites visitors to discover 
-                how digital innovation is transforming the way we create, experience, and understand 
-                art. Whether you are a first-time visitor or a returning member, our exhibitions 
-                offer new perspectives on the role of technology in culture and everyday life. 
-                Plan your visit to experience cutting-edge exhibitions, hands-on experiences, and 
-                events designed to inspire curiosity and creativity.</p>
-            <button id="homeButton">Buy Tickets</button>
+        <div class="container">
+            <header class="header">
+                <img class="logo" src="./static/monomuselogo.png"/>
+                <nav class="nav_bar">
+                    <a href="index.html">Home</a>
+                    <a href="views/explore.html">Explore</a>
+                    <a href="views/exhibitions.html">Exhibitions</a>
+                    <a id="ticketsButton" href="views/tickets.html">Buy Tickets</a>
+                </nav>
+            </header>
+            <div class="back-img">
+                <h1 id="back-img-text">MonoMuse</h1>
+            </div>
+            <div class="main-img">
+                <img class="main-img-img" src="./static/OldNYC.jpg">
+                <span>Mulberry Street, New York City, 1900</span>
+            </div>
+            
+            <div class="main">
+                <h2 id="greeting">Welcome to MonoMuse</h2>
+                <p id="shortIntro">MonoMuse is a contemporary NYC history museum 
+                    that explores the city's stories through immersive exhibitions, 
+                    interactive installations, and innovative storytelling, 
+                    inviting visitors to discover the moments, people, and 
+                    ideas that shaped New York.</p>
+                
+                <div id="additionalInfo">
+                    <button id="readMore">+</button>
+                    <button id="readLess">-</button>
+                    <p id="longIntro">Beyond traditional displays, MonoMuse brings history to life 
+                        through multi-sensory experiences, from recreated streetscapes 
+                        and historic interiors to digital archives and augmented reality 
+                        features. Each exhibition highlights the connections between past 
+                        and present, showing how immigration, innovation, culture, and 
+                        urban development have intertwined to create the vibrant, ever-changing 
+                        city we know today. By blending scholarship with creativity, 
+                        MonoMuse encourages visitors to engage with history actively, 
+                        sparking curiosity, conversation, and a deeper appreciation for 
+                        the forces that continue to shape New York's identity.</p>
+                </div>
+
+                <button id="homeButton">Buy Tickets</button>
+            </div>
+        
+            <footer class="footer">
+                &copy;
+                <span id="copyYear"></span>
+            </footer>
         </div>
-    
-        <footer>
-            &copy;
-            <p id="copyYear"></p>
-        </footer>
     </body>
 </html>
