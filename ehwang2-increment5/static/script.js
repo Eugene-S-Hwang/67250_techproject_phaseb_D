@@ -65,13 +65,18 @@ var exhibitions = [
         title: "Exhibition 2: Bridges and Subways: Building the Modern City",
         description: "Explore how iconic engineering feats—like the Brooklyn Bridge, the subway system, and the water supply networks—transformed New York into a 24/7 metropolis. Visitors can interact with digital models of construction, see archival blueprints, and experience immersive simulations of historic city planning decisions.",
         image: "old_george_washington_bridge.jpg"
+    },
+    {
+        title: "Exhibition 3: City in Crisis: New York Through Disaster and Resilience",
+        description: "Explore how New York City has faced and overcome moments of upheaval—from the New York City Draft Riots to September 11 attacks and Hurricane Sandy. Through firsthand accounts, artifacts, and immersive media, visitors experience how communities responded, rebuilt, and redefined the city in the aftermath of crisis.",
+        image: "911.jpg"
     }
 ];
 
 var exhibitionIndex = 0;
 
 function nextExhibition(indx){
-    indx = ((indx % 2) + 2) % 2;
+    indx = ((indx % 3) + 3) % 3;
     document.getElementById("exhibition-title").innerHTML = exhibitions[indx].title;
     document.getElementById("exhibition-description").innerHTML = exhibitions[indx].description;
     document.getElementById("exhibition-image").src = "../static/" + exhibitions[indx].image;
@@ -249,6 +254,11 @@ $(".ticket-purchase-form").on("submit", function (e) {
         alert("Checkout form submitted");
         window.location.href = "tickets.html";
         return;
+    }
+    if (this.id === "donate-form") {
+        e.preventDefault();
+        alert("Membership Application Submitted");
+        return false;
     }
     e.preventDefault();
     var dateVal = $("#purchase-date").val();
