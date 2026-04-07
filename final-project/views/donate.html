@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="author" content="Your name">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <title>MonoMuse</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/script.js" defer></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="addYear()">
+        <div class="container">
+            <header class="header">
+                <img class="logo" src="../static/monomuselogo.png" alt="MonoMuse Logo">
+                <div class="nav-div">
+                    <button id="nav-button">
+                        <img src="../static/hamburger_menu.png" alt="Menu">
+                    </button>
+                    <nav class="nav_bar">
+                        <a href="../index.html">Home</a>
+                        <a href="explore.html">Explore</a>
+                        <a href="exhibitions.html">Exhibitions</a>
+                        <a href="donate.html">Donate</a>
+                        <a id="ticketsButton" href="tickets.html">Buy Tickets</a>
+                    </nav>
+                </div>
+            </header>
+            <h1 class="main-title">Donate</h1>
+            <div class="main-img">
+                <img class="main-img-img" src="../static/OldNYC.jpg" alt="MonoMuse entrance">
+            </div>
+            <div class="main">
+                <form class="ticket-purchase-form checkout-form" id="donate-form">
+                    <h2 class="ticket-purchase-form__title">Membership Application</h2>
+                    <div class="ticket-purchase-form__field">
+                        <label for="donate-name">Name</label>
+                        <input id="donate-name" name="name" type="text" required >
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="donate-email">Email</label>
+                        <input id="donate-email" name="email" type="email" required >
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="donate-num">Donation Amount</label>
+                        <input id="donate-num" name="number" type="number" required >
+                    </div>
+                    <div class="ticket-purchase-form__submit">
+                        <button type="submit" id="donate-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <footer class="footer">
+                &copy;
+                <span id="copyYear"></span>
+            </footer>
+        </div>
+    </body>
+</html>

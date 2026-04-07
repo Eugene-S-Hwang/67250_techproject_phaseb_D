@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="author" content="Your name">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <title>MonoMuse</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/script.js" defer></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="addYear()">
+        <div class="container">
+            <header class="header">
+                <img class="logo" src="../static/monomuselogo.png" alt="MonoMuse Logo">
+                <div class="nav-div">
+                    <button id="nav-button">
+                        <img src="../static/hamburger_menu.png" alt="Menu">
+                    </button>
+                    <nav class="nav_bar">
+                        <a href="../index.html">Home</a>
+                        <a href="explore.html">Explore</a>
+                        <a href="exhibitions.html">Exhibitions</a>
+                        <a href="donate.html">Donate</a>
+                        <a id="ticketsButton" href="tickets.html">Buy Tickets</a>
+                    </nav>
+                </div>
+            </header>
+            <h1 class="main-title">Explore</h1>
+            <div class="main-img">
+                <img class="main-img-img" src="../static/MonomuseEntrance.png" alt="MonoMuse Entrance">
+            </div>
+            <div class="main">
+                <p id="randomMessage"></p>
+    
+                <h2>Mission Statement</h2>
+                <p>MonoMuse illuminates the singular stories, systems, and
+                     moments that have shaped New York City, revealing how
+                      each thread contributes to the city's collective history.</p>
+                <h2>Milestones</h2>
+                <ul>
+                    <li>2026 - Immersive Neighborhood Exhibits: The museum opens a series of site-specific installations across historic NYC neighborhoods, bringing local history directly to the streets.</li>
+                    <li>2020 - First Physical Exhibition Opens: Debut showcase introduces immersive, story-focused exhibits.</li>
+                    <li>2018 - MonoMuse Launched: Vision established to reframe NYC history through singular narratives. Initially founded as a digital museum led by Dr. Eugene Hwang.</li>
+                </ul>
+            </div>
+        
+            <footer class="footer">
+                &copy;
+                <span id="copyYear"></span>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="author" content="Your name">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <title>MonoMuse</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/script.js" defer></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="addYear()">
+        <div class="container">
+            <header class="header">
+                <img class="logo" src="../static/monomuselogo.png" alt="MonoMuse Logo">
+                <div class="nav-div">
+                    <button id="nav-button">
+                        <img src="../static/hamburger_menu.png" alt="Menu">
+                    </button>
+                    <nav class="nav_bar">
+                        <a href="../index.html">Home</a>
+                        <a href="explore.html">Explore</a>
+                        <a href="exhibitions.html">Exhibitions</a>
+                        <a href="donate.html">Donate</a>
+                        <a id="ticketsButton" href="tickets.html">Buy Tickets</a>
+                    </nav>
+                </div>
+            </header>
+            <h1 class="main-title">Checkout</h1>
+            <div class="main-img">
+                <img class="main-img-img" src="../static/MonomuseEntrance.png" alt="MonoMuse entrance">
+            </div>
+            <div class="main">
+                <form class="ticket-purchase-form checkout-form" id="checkout-form">
+                    <h2 class="ticket-purchase-form__title">Order confirmation</h2>
+                    <div class="ticket-purchase-form__field">
+                        <label for="checkout-date">Visit date</label>
+                        <input id="checkout-date" name="date" type="text" readonly >
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="checkout-name">Name</label>
+                        <input id="checkout-name" name="name" type="text" readonly >
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="checkout-email">Email</label>
+                        <input id="checkout-email" name="email" type="text" readonly >
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="checkout-adult">Adult tickets</label>
+                        <input id="checkout-adult" name="adult" type="text" readonly >
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="checkout-member">Member tickets</label>
+                        <input id="checkout-member" name="member" type="text" readonly >
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="checkout-student">Student tickets</label>
+                        <input id="checkout-student" name="student" type="text" readonly >
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="checkout-total-tickets">Total tickets</label>
+                        <input id="checkout-total-tickets" name="totalTickets" type="text" readonly >
+                    </div>
+                    <div class="ticket-purchase-form__field">
+                        <label for="checkout-price">Price</label>
+                        <input id="checkout-price" name="price" type="text" readonly >
+                    </div>
+
+                    <button type="submit" id="checkout-submit">Submit</button>
+                </form>
+            </div>
+            <footer class="footer">
+                &copy;
+                <span id="copyYear"></span>
+            </footer>
+        </div>
+    </body>
+</html>

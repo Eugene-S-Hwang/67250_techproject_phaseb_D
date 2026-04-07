@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="author" content="Eugene Hwang">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <title>MonoMuse</title>
+        <link rel="stylesheet" href="./static/style.css">
+        <script src="./static/script.js" defer></script>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="">
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    </head>
+    <body onload="addYear()">
+        <div class="container">
+            <header class="header">
+                <img class="logo" src="./static/monomuselogo.png" alt="MonoMuse Logo">
+                <div class="nav-div">
+                    <button id="nav-button">
+                        <img src="./static/hamburger_menu.png" alt="Menu">
+                    </button>
+                    <nav class="nav_bar">
+                        <a href="index.html">Home</a>
+                        <a href="views/explore.html">Explore</a>
+                        <a href="views/exhibitions.html">Exhibitions</a>
+                        <a href="views/donate.html">Donate</a>
+                        <a id="ticketsButton" href="views/tickets.html">Buy Tickets</a>
+                    </nav>
+                </div>
+            </header>
+            <div class="back-img">
+                <h1 id="back-img-text">MonoMuse</h1>
+            </div>
+            <div class="main-video">
+                <iframe class='main-video-frame' 
+                    src="https://www.youtube.com/embed/gCEN5h1JvoM" 
+                    title="The Entire History of New York City"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen></iframe>
+                <!-- <img class="main-img-img" src="./static/OldNYC.jpg" alt="Mulberry Street, New York City, 1900"/> -->
+                <span>History of New York City - Introductory Video</span>
+            </div>
+            
+            <div class="main">
+                <h2 id="greeting">Welcome to MonoMuse</h2>
+                <p id="shortIntro">MonoMuse is a contemporary NYC history museum 
+                    that explores the city's stories through immersive exhibitions, 
+                    interactive installations, and innovative storytelling, 
+                    inviting visitors to discover the moments, people, and 
+                    ideas that shaped New York.</p>
+                
+                <div id="additionalInfo">
+                    <button id="readMore">+</button>
+                    <button id="readLess">-</button>
+                    <p id="longIntro">Beyond traditional displays, MonoMuse brings history to life 
+                        through multi-sensory experiences, from recreated streetscapes 
+                        and historic interiors to digital archives and augmented reality 
+                        features. Each exhibition highlights the connections between past 
+                        and present, showing how immigration, innovation, culture, and 
+                        urban development have intertwined to create the vibrant, ever-changing 
+                        city we know today. By blending scholarship with creativity, 
+                        MonoMuse encourages visitors to engage with history actively, 
+                        sparking curiosity, conversation, and a deeper appreciation for 
+                        the forces that continue to shape New York's identity.</p>
+                </div>
+
+                <button id="homeButton">Buy Tickets</button>
+            </div>
+
+            <div class="map" id="map">
+            </div>
+        
+            <footer class="footer">
+                &copy;
+                <span id="copyYear"></span>
+            </footer>
+        </div>
+    </body>
+</html>

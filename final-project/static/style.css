@@ -1,0 +1,444 @@
+* {
+    padding: 5px;
+    margin: 5px;
+    color:  #000000;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+body {
+    background: linear-gradient(to bottom, #C5B7AB, #AC9485, #ADD4D5, #7B9BAC, #2C5373);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: auto;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'back-img back-img'
+        'main-left main-right'
+        'map map'
+        'footer footer';
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        min-width: 600px;
+        grid-template-areas:
+            'header'
+            'back-img'
+            'main-left'
+            'main-right'
+            'map'
+            'footer';
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-area: header;
+    border-bottom: 1px solid #F4F1ED;
+}
+
+.main-title {
+    grid-area:back-img;
+}
+
+.back-img {
+    grid-area: back-img;
+    display: grid;
+    place-items: center;
+    background-image: url('NYC.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#back-img-text {
+    color: #F4F1ED;
+    font-size: 100px;
+    font-weight: 600;
+}
+
+.logo {
+    width: 18%;
+    height:50px;
+    width:80px;
+    grid-area: logo;
+}
+
+.logo:hover {
+    background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+    z-index: 100;
+}
+
+.nav-div{
+    margin-left: auto;
+    display: grid;
+    justify-items: right;
+}
+
+.map{
+    grid-area: map;
+}
+
+#map{
+    height: 300px;
+}
+
+.leaflet-container * {
+    margin: 0;
+}
+
+.leaflet-container img.leaflet-marker-icon,
+.leaflet-container .leaflet-marker-shadow,
+.leaflet-container .leaflet-popup-tip {
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .nav_bar {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav_bar{
+        height:auto;
+        margin-left: auto;
+        display: flex;
+        justify-content: right;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 769px) {
+    #nav-button {
+        display: none;
+        margin-left: auto;
+        background: transparent;
+        border: none;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    #nav-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-left: auto;
+        background: transparent;
+        height: 44px;
+        width: 44px;
+    }
+
+    #nav-button img {
+        display: block;
+        width: 44px;
+        height: 44px;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+}
+
+.main{
+    grid-area: main-right;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-img{
+    grid-area: main-left;
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.main-img-img {
+    width: 100%;
+    height: 90%;
+    object-fit: contain;
+    object-position: top center;
+    border-radius: 10px;
+}
+
+.main-video {
+    grid-area: main-left;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.main-video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 200px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.footer {
+    border-top: 1px solid rgba(245,245,247,.12);
+    padding: 18px 16px;
+    text-align: center;
+    color: rgba(245,245,247,.72);
+    grid-area: footer;
+}
+
+.ticket-table{
+    grid-area: main-left;
+    display: flex;
+    flex-direction: column;
+}
+
+.tickets-picker {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid #F4F1ED;
+    border-radius: 10px;
+}
+
+.ticket-table .tickets-picker tr {
+    background-color: transparent;
+}
+
+.ticket-table .tickets-picker td,
+.ticket-table .tickets-picker th {
+    border: none;
+    vertical-align: top;
+    padding-inline: 12px;
+    box-sizing: border-box;
+}
+
+.ticket-table .tickets-picker col.tickets-picker__col-type {
+    width: 50%;
+}
+
+.ticket-table .tickets-picker col.tickets-picker__col-count {
+    width: 50%;
+}
+
+.ticket-table .tickets-picker th.tickets-picker__type-cell,
+.ticket-table .tickets-picker td.tickets-picker__type-cell {
+    text-align: left;
+    width: 50%;
+}
+
+.ticket-table .tickets-picker th.tickets-picker__count-cell,
+.ticket-table .tickets-picker td.tickets-picker__count-cell {
+    text-align: right;
+    width: 50%;
+}
+
+.tickets-picker__detail-cell {
+    text-align: left;
+}
+
+.tickets-picker__controls-row {
+    border-bottom: 1px solid #F4F1ED;
+}
+
+.tickets-picker__controls-cell {
+    text-align: left;
+}
+
+.tickets-picker__buttons {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tickets-picker__buttons button {
+    flex: 1 1 50%;
+    min-width: 0;
+}
+
+.ticket-table .tickets-picker thead th {
+    border-bottom: 1px solid #ccc;
+}
+
+.tickets-picker__section-rule td {
+    border-top: 1px solid #ccc;
+    padding: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+}
+
+.ticket-date-picker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    height:25px;
+    font-weight: 400;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.active {
+    background: #F4F1ED;
+}
+
+#homeButton {
+    background: #1F2A33;
+    color: #F4F1ED;
+    border-radius: 8px;
+    width: 100%;
+    cursor:pointer
+}
+
+.arrow-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#left-arrow {
+    background: #1F2A33;
+    color: #F4F1ED;
+    border-radius: 10px;
+    cursor:pointer
+}
+
+#right-arrow {
+    background: #1F2A33;
+    color: #F4F1ED;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+#ticketsButton {
+    background: #1F2A33;
+    color: #F4F1ED;
+    border-radius: 8px;
+    cursor:pointer
+}
+
+#readLess {
+    display: none;
+    background: #2C5373;
+    color: #F4F1ED;
+    border-radius: 10px;
+}
+
+#readMore {
+    background: #2C5373;
+    color: #F4F1ED;
+    border-radius: 10px;
+}
+
+#longIntro {
+    display: none;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: fit-content;
+    background: #C5B7AB;
+    border: 1px solid #000000
+}
+
+form * {
+    margin: auto;
+    text-align: center;
+}
+
+#purchase-submit-button, #donate-submit, #checkout-submit{
+    background: #1F2A33;
+    color: #F4F1ED;
+    border-radius: 8px;
+    cursor:pointer
+}
+
+#purchase-date-button {
+    background: #1F2A33;
+    color: #F4F1ED;
+    border-radius: 8px;
+    cursor:pointer
+}
+
+.ticket-purchase-form,
+.ticket-purchase-form * {
+    margin: 0;
+    text-align: left;
+}
+
+.ticket-purchase-form {
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.checkout-form,
+form.checkout-form {
+    display: block;
+}
+
+.checkout-form input[readonly] {
+    background-color: rgba(244, 241, 237, 0.35);
+    cursor: default;
+}
+
+.ticket-purchase-form__title {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.ticket-purchase-form__field {
+    margin-bottom: 0.75rem;
+    box-sizing: border-box;
+}
+
+.ticket-purchase-form__field label {
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.ticket-purchase-form__field input,
+.ticket-purchase-form__field select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ticket-purchase-form__submit {
+    text-align: center;
+    padding-bottom: 0;
+}
