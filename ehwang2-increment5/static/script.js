@@ -172,7 +172,11 @@ $("#homeButton").click(function(){
 });
 
 $("#nav-button").click(function(){
-    $(".nav_bar").toggle();
+    var $nav = $(".nav_bar");
+    $nav.toggle();
+    if ($nav.is(":visible")) {
+        $nav.css("display", "flex");
+    }
 });
 
 $(window).on("resize", function () {
@@ -264,6 +268,8 @@ $(".ticket-purchase-form").on("submit", function (e) {
     }
     e.preventDefault();
     var dateVal = $("#purchase-date").val();
+
+    //Crediting Cursor for teaching me how to use sessionStorage
     sessionStorage.setItem(
         "monoMuseCheckout",
         JSON.stringify({

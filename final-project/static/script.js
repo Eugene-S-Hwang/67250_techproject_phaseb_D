@@ -172,11 +172,15 @@ $("#homeButton").click(function(){
 });
 
 $("#nav-button").click(function(){
-    $(".nav_bar").toggle();
+    var $nav = $(".nav_bar");
+    $nav.toggle();
+    if ($nav.is(":visible")) {
+        $nav.css("display", "flex");
+    }
 });
 
 $(window).on("resize", function () {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1024) {
         $(".nav_bar").css("display", "");
     }
 });
@@ -249,6 +253,7 @@ bindTicketStepper("Increase-Adult-tickets", "Decrease-Adult-tickets", "adult");
 bindTicketStepper("Increase-Member-tickets", "Decrease-Member-tickets", "member");
 bindTicketStepper("Increase-Student-tickets", "Decrease-Student-tickets", "student");
 
+//Crediting Cursor for teaching me how to use sessionStorage
 $(".ticket-purchase-form").on("submit", function (e) {
     if (this.id === "checkout-form") {
         e.preventDefault();
